@@ -11,18 +11,27 @@ private:
     float aguaIndustrial;
     float arComprimido;
 public:
-FornoFloat(float tForno, float tbEstanho, float eEletrica, float gNatural, float agInd, float aComp);
-{
-    tempForno = tForno;
-    tempBanhoEstanho = tbEstanho;
-    energiaEletrica = eEletrica;
-    gasNatural = gNatural;
-    aguaIndustrial = agInd;
-    arComprimido = aComp;
-}
-/*Registrar e exportar dados de temperatura, consumo de energia, gás, água e ar comprimido para análise de
-eficiência e prevenção de falhas.*/
-virtual ~FornoFloat();
+    FornoFloat(float tForno, float tbEstanho, float eEletrica, float gNatural, float agInd, float aComp)
+    {
+        tempForno = tForno;
+        tempBanhoEstanho = tbEstanho;
+        energiaEletrica = eEletrica;
+        gasNatural = gNatural;
+        aguaIndustrial = agInd;
+        arComprimido = aComp;
+    }
+    /*Registrar e exportar dados de temperatura, consumo de energia, gás, água e ar comprimido para análise de
+    eficiência e prevenção de falhas.*/
+    virtual ~FornoFloat();
+    void ExibirDados()
+    {
+        cout << "Temperatura do forno: " << tempForno << " °C\n";
+        cout << "Temperatura do banho de estanho: " << tempBanhoEstanho << " °C\n";
+        cout << "Consumo de energia elétrica: " << energiaEletrica << " kWh\n";
+        cout << "Consumo de gás natural: " << gasNatural << " Nm³\n";
+        cout << "Consumo de água industrial: " << aguaIndustrial << " litros\n";
+        cout << "Consumo de ar comprimido: " << arComprimido << " bar\n";
+    }
 
     float GettempForno()
     {
